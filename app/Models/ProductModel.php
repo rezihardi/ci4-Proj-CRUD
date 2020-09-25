@@ -3,7 +3,9 @@ use CodeIgniter\Model;
 
 class ProductModel extends Model
 {
+    // inisialisasi table
     protected $table = 'product';
+
     
     public function getProduct($id = false)
     {
@@ -13,10 +15,16 @@ class ProductModel extends Model
             return $this->getWhere(['product_id' => $id]);
         }   
     }
-    
+
     public function saveProduct($data)
     {
         $query = $this->db->table($this->table)->insert($data);
+        return $query;
+    }
+
+    public function updateProduct($data, $id)
+    {
+        $query = $this->db->table($this->table)->update($data, array('product_id' => $id));
         return $query;
     }
 }

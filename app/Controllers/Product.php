@@ -28,4 +28,23 @@ class Product extends Controller
         $model->saveProduct($data);
         return redirect()->to('/product');
     }
+
+    public function edit($id)
+    {
+        $model = new ProductModel();
+        $data['product'] = $model->getProduct($id)->getRow();
+        echo view('EditProductView', $data);
+    }
+ 
+    public function update()
+    {
+        $model = new ProductModel();
+        $id = $this->request->getPost('product_id');
+        $data = array(
+            'product_name'  => $this->request->getPost('product_name'),
+            'product_price' => $this->request->getPost('product_price'),
+        );
+        $model->updateProduct($data, $id);
+        return redirect()->to('/product');
+    }
 }

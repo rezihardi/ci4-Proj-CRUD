@@ -6,12 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Product List</title>
 </head>
-<body> 
+<body>
+    <a href="/product/add_new">Add New</a>
     <table>
         <thead>
             <tr>
                 <th>Name</th>
                 <th>Price</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -19,6 +21,7 @@
             <tr>
                 <td><?= $row['product_name'];?></td>
                 <td><?= $row['product_price'];?></td>
+                <td><a href="/product/edit/<?= $row['product_id'];?>">Edit</a></td>
             </tr>
         <?php endforeach;?>
         </tbody>
