@@ -21,7 +21,10 @@
             <tr>
                 <td><?= $row['product_name'];?></td>
                 <td><?= $row['product_price'];?></td>
-                <td><a href="/product/edit/<?= $row['product_id'];?>">Edit</a></td>
+                <td>
+                    <a href="/product/edit/<?= $row['product_id'];?>">Edit</a>
+                    <a href="/product/delete/<?= $row['product_id'];?>">Delete</a>
+                </td>
             </tr>
         <?php endforeach;?>
         </tbody>

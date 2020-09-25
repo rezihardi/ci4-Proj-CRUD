@@ -47,4 +47,10 @@ class Product extends Controller
         $model->updateProduct($data, $id);
         return redirect()->to('/product');
     }
+    public function delete($id)
+    {
+        $model = new ProductModel();
+        $model->deleteProduct($id);
+        return redirect()->to('/product');
+    }
 }
