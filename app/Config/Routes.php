@@ -32,6 +32,17 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+$routes->resource('products');
+// 1 line diatas merepresentasikan banyak line dibawah
+// $routes->get('products/new',             'products::new');
+// $routes->post('products',                'products::create');
+// $routes->get('products',                 'products::index');
+// $routes->get('products/(:segment)',      'products::show/$1');
+// $routes->get('products/(:segment)/edit', 'products::edit/$1');
+// $routes->put('products/(:segment)',      'products::update/$1');
+// $routes->patch('products/(:segment)',    'products::update/$1');
+// $routes->delete('products/(:segment)',   'products::delete/$1');
+
 /**
  * --------------------------------------------------------------------
  * Additional Routing

@@ -12,7 +12,7 @@ class ProductModel extends Model
         if($id === false){
             return $this->findAll();
         }else{
-            return $this->getWhere(['product_id' => $id]);
+            return $this->getWhere(['product_id' => $id])->getRowArray();
         }   
     }
 
@@ -33,4 +33,5 @@ class ProductModel extends Model
         $query = $this->db->table($this->table)->delete(array('product_id' => $id));
         return $query;
     } 
+
 }
